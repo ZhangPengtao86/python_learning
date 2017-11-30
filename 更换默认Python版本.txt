@@ -1,0 +1,10 @@
+Linux有Pyothon2.x 和 Python 3.x 设置默认Python版本：
+
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 100
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 150
+
+然后执行 python -V 便是 Python 3.x了
+
+恢复pyhton 2.x ：
+
+sudo update-alternatives --config python
