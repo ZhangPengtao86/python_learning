@@ -12,3 +12,15 @@ for key in tests:
         print(key,'was found')
     else:
         print(key, 'was not found')
+
+
+
+>>> seq1='spam'
+>>> seq2='scam'
+>>> res=[]
+>>> for x in seq1:
+...     if x in seq2:
+...             res.append(x)
+...
+>>> res
+['s', 'a', 'm']
