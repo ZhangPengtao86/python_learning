@@ -1,0 +1,7 @@
+>>> a=''
+>>> b=[]
+>>> c={}
+>>> d=3
+>>> x=a or b or c or d or None
+>>> x
+3
