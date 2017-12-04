@@ -1,0 +1,6 @@
+列表解析允许有任意个for嵌套：
+>>> [x+y+z for x in 'abc' for y in 'def' for z in 'xyz']
+['adx', 'ady', 'adz', 'aex', 'aey', 'aez', 'afx', 'afy', 'afz', 'bdx', 'bdy', 'bdz', 'bex', 'bey', 'bez', 'bfx', 'bfy', 'bfz', 'cdx', 'cdy', 'cdz', 'cex', 'cey', 'cez', 'cfx', 'cfy', 'cfz']
+列表解析的扩展：
+可以扩展成任意复杂的解析式，如果需要！
+[line.strip() for line in open('script.py') if line[0] == 'p' ]
