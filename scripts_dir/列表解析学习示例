@@ -4,3 +4,13 @@
 列表解析的扩展：
 可以扩展成任意复杂的解析式，如果需要！
 [line.strip() for line in open('script.py') if line[0] == 'p' ]
+
+>>> list(zip(open('f.cpp'),open('f.cpp')))
+[('#include <iostream>\n', '#include <iostream>\n'), ('12334234adsfsfdsfsfd\n', '12334234adsfsfdsfsfd\n'), ('#include <fstream>\n', '#include <fstream>\n'), ('using namespace std;\n', 'using namespace std;\n')]
+
+>>> sum([1,2,3,4])
+10
+>>> max([4,2,5,2,8])
+8
+>>> min([4,2,5,2,8])
+2
