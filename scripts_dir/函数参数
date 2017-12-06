@@ -1,0 +1,16 @@
+cat tt.py
+#!/usr/local/bin/env python
+def changer(a,b):
+        if b is l:
+                print 'b is l !!!'      #说明在调用函数的时候，传递的参数赋值给函数本地变量b, 传进来的变量名跟函数的形式参数是对传进来的对象的相同引用
+        a = 2
+        b[0]= 'spam'
+x=1
+l=[1,2]
+changer(x,l)
+print x,l
+
+运行结果：
+[root@skx-p4 ~]# python tt.py 
+b is l !!!
+1 ['spam', 2]
