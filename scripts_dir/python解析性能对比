@@ -1,0 +1,70 @@
+[root@skl-s ~]# cat mytimer.py
+#!/usr/bin/env python3.4
+import time
+reps = 1000
+repslist = range(reps)
+
+def timer(func, *pargs, **kwargs):
+	start = time.clock()
+	for i in repslist:
+		ret = func(*pargs, **kwargs)
+	print(time.clock, start)
+	elapsed = time.clock() - start
+	return (elapsed, ret)
+
+
+
+
+[root@skl-s ~]# cat timeseqs.py 
+#!/usr/bin/env python3.4
+import sys, mytimer
+reps = 100000
+repslist = range(reps)
+
+def forloop():
+	res = []
+	for x in repslist:
+		res.append(abs(x))
+	return res
+
+def listcomp():
+	return [ abs(x) for x in repslist]
+
+def mapcall():
+	return list(map(abs, repslist))
+
+def genexpr():
+	return list(abs(x) for x in repslist)
+
+def genfunc():
+	def gen():
+		for x in repslist:
+			yield abs(x)
+	return list(gen())
+
+print(sys.version)
+
+for test in (forloop, listcomp, mapcall, genexpr, genfunc):
+	elapsed, result = mytimer.timer(test)
+	print('*'* 33)
+	print('{}: {} ==> [{}... {}]'.format(test.__name__, elapsed, result[0], result[-1]))
+
+
+[root@skl-s ~]# python3.4 timeseqs.py 
+3.4.5 (default, May 29 2017, 15:17:55) 
+[GCC 4.8.5 20150623 (Red Hat 4.8.5-11)]
+<built-in function clock> 0.01
+*********************************
+forloop: 10.38 ==> [0... 99999]
+<built-in function clock> 10.39
+*********************************
+listcomp: 6.300000000000001 ==> [0... 99999]
+<built-in function clock> 16.69
+*********************************
+mapcall: 5.239999999999998 ==> [0... 99999]
+<built-in function clock> 21.94
+*********************************
+genexpr: 9.419999999999998 ==> [0... 99999]
+<built-in function clock> 31.36
+*********************************
+genfunc: 9.469999999999999 ==> [0... 99999]
