@@ -1,0 +1,23 @@
+编译Python：
+tar zxvf Python-3.6.4.tgz
+cd Python-3.6.4/
+./configure 
+make
+make install
+
+
+export https_proxy="http://proxy-shz.intel.com:911"
+wget https://bootstrap.pypa.io/get-pip.py
+python get-pip.py 
+pip3 install virtualenv
+mkdir simpleblog
+cd simpleblog
+source myvenv/bin/activate
+(myvenv) [root@skx-p5 simpleblog]# pip install django==1.9.5
+Collecting django==1.9.5
+  Downloading Django-1.9.5-py2.py3-none-any.whl (6.6MB)
+    100% |==================================| 6.6MB 61kB/s 
+Installing collected packages: django
+Successfully installed django-1.9.5
+(myvenv) [root@skx-p5 simpleblog]# echo $?
+0
