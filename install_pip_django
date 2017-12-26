@@ -12,6 +12,7 @@ python3 get-pip.py
 pip3 install virtualenv
 mkdir simpleblog
 cd simpleblog
+python3 -m venv myvenv
 source myvenv/bin/activate
 (myvenv) [root@skx-p5 simpleblog]# pip install django==1.9.5
 Collecting django==1.9.5
