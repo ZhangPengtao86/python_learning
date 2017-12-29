@@ -1,0 +1,54 @@
+ 编译Python：
+tar zxvf Python-3.6.4.tgz
+cd Python-3.6.4/
+./configure 
+make
+make install
+
+
+export https_proxy="http://proxy-shz.intel.com:911"
+wget https://bootstrap.pypa.io/get-pip.py
+python3 get-pip.py 
+pip3 install virtualenv
+mkdir simpleblog
+cd simpleblog
+python3 -m venv myvenv
+source myvenv/bin/activate
+(myvenv) [root@skx-p5 simpleblog]# pip install django==1.9.5
+Collecting django==1.9.5
+  Downloading Django-1.9.5-py2.py3-none-any.whl (6.6MB)
+    100% |==================================| 6.6MB 61kB/s 
+Installing collected packages: django
+Successfully installed django-1.9.5
+(myvenv) [root@skx-p5 simpleblog]# echo $?
+0
+ 
+ 
+ 195  yum install libpg-dev*
+  196  yum install pg*
+  197  yum install libpq-fe*
+  198  yum install libpq*
+
+ 208  export https_proxy="http://proxy-shz.intel.com:911"
+  209  python3 get-pip.py 
+  210  pip3 install virtualenv
+  212  mkdir my_blog
+  213  cd my_blog/
+  214  python3 -m venv myvenv
+  219  source myvenv/bin/activate
+  224  pip3 install Django==1.7.1
+  225  pip3 install Markdown==2.5.2
+  228  pip3 install Pygments==2.0.1
+  229  pip3 install bootstrap-admin==0.3.3
+  230  pip3 install dj-database-url==0.3.0
+  231  pip3 install dj-static==0.0.6
+  232  pip3 install django-markdown==0.8.4
+  233  pip3 install django-toolbelt==0.0.1
+  234  which pg_config
+  235  pip3 install django-toolbelt==0.0.1
+  236  pip3 install gunicorn==19.1.1
+  237  pip3 install markdown2==2.3.0
+  238  pip3 install psycopg2==2.5.4
+  239  pip3 install static3==0.5.1
+  240  pip3 install pytz==201504
+  241  pip3 install pytz==2015.4
