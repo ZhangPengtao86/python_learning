@@ -1,9 +1,17 @@
 编译Python：
 tar zxvf Python-3.6.4.tgz
 cd Python-3.6.4/
-./configure 
+yum install sqlite-devel
+./configure --enable-loadable-sqlite-extensions --enable-shared
 make
 make install
+
+如果按照pip出现下面的错误：
+[root@skl-s home]# python3 get-pip.py 
+python3: error while loading shared libraries: libpython3.4m.so.1.0: cannot open shared object file: No such file or directory
+解决方法：
+echo /usr/local/lib >> /etc/ld.so.conf
+ldconfig
 
 
 export https_proxy="http://proxy-shz.intel.com:911"
