@@ -1,0 +1,27 @@
+
+题目要求，反转字符串，并保证原字符串里面的大小写位置不变
+
+[root@localhost ~]# cat f.py 
+#!/usr/bin/python
+s = 'heLLO WorLD Hi PeNg TaO'
+print s
+count = 0
+# record the capital id
+cap_id = []
+for i in s:
+	if i.isupper():
+		cap_id.append(count)
+	count += 1
+#reverse the string and lower it
+rs = s[::-1].lower()
+#convert string to list for replace
+rt= list(' '.join(rs.split()[::-1]))
+# do replace action
+for j in cap_id:
+	rt[j] = rt[j].upper()
+#convert list to string again
+print ''.join(rt)
+
+[root@localhost ~]# python f.py 
+heLLO WorLD Hi PeNg TaO
+olLEH DlrOW Ih GnEp OaT
